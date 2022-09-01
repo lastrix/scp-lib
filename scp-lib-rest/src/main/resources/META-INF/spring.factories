@@ -1,0 +1,2 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  com.lastrix.scp.lib.rest.RestAutoConfiguration,com.lastrix.scp.lib.rest.JwtAutoConfiguration
