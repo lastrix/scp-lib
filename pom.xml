@@ -20,6 +20,7 @@
         <org.mapstruct.version>1.3.1.Final</org.mapstruct.version>
     </properties>
     <modules>
+        <module>scp-lib-db</module>
         <module>scp-lib-reflect</module>
         <module>scp-lib-rest</module>
     </modules>
