@@ -1,8 +1,8 @@
-package com.lastrix.scp.lib.rest;
+package com.lastrix.scp.lib.rest.jwt;
 
 import com.auth0.jwt.JWT;
-import com.lastrix.scp.lib.rest.jwt.Jwt;
-import com.lastrix.scp.lib.rest.jwt.JwtSecret;
+import com.lastrix.scp.lib.rest.DefaultJwtTokenProvider;
+import com.lastrix.scp.lib.rest.JwtTokenProvider;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
@@ -28,7 +28,8 @@ public class JwtAutoConfiguration {
     @Bean
     public Jwt jwt(HttpServletRequest request, JwtSecret jwtSecret) {
         var token = request.getHeader(HttpHeaders.AUTHORIZATION);
-        if (!token.startsWith(PREFIX)) throw new IllegalArgumentException("Invalid jwt token passed: " + token);
+        if (token == null || !token.startsWith(PREFIX))
+            throw new IllegalArgumentException("Invalid jwt token passed: " + token);
         token = token.substring(PREFIX.length()).trim();
         JWT.require(jwtSecret.getAlgorithm())
                 .acceptExpiresAt(0)
@@ -45,5 +46,4 @@ public class JwtAutoConfiguration {
             JwtSecret jwtSecret) {
         return new DefaultJwtTokenProvider(jwtSecret, srvId, lifetime);
     }
-
 }

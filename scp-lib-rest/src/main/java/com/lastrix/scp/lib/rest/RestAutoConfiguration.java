@@ -14,7 +14,6 @@ import java.time.Instant;
 import java.time.format.DateTimeFormatterBuilder;
 
 public class RestAutoConfiguration {
-
     //Jackson Data Binder
     @Bean
     public ObjectMapper objectMapper() {

@@ -2,6 +2,7 @@ package com.lastrix.scp.lib.rest;
 
 import com.auth0.jwt.JWT;
 import com.lastrix.scp.lib.rest.jwt.Jwt;
+import com.lastrix.scp.lib.rest.jwt.JwtAutoConfiguration;
 import com.lastrix.scp.lib.rest.jwt.JwtSecret;
 import com.lastrix.scp.lib.rest.jwt.UserType;
 

@@ -1,0 +1,2 @@
+com.lastrix.scp.lib.rest.error.impl.DefaultErrorConverter
+com.lastrix.scp.lib.rest.error.impl.ServiceErrorExceptionConverter
