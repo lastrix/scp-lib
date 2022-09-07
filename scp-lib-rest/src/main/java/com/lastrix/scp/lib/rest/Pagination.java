@@ -21,12 +21,14 @@ public class Pagination {
     private int pageSize = 20;
     private Integer pageCount;
     private Long totalCount;
+    private boolean extended = false;
 
     public Pagination(Pagination pagination) {
         setPage(pagination.getPage());
         setPageSize(pagination.getPageSize());
         setPageCount(pagination.getPageCount());
         setTotalCount(pagination.getTotalCount());
+        setExtended(pagination.isExtended());
     }
 
     public PageRequest toPageable() {
