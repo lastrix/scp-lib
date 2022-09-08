@@ -9,10 +9,12 @@ import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import com.fasterxml.jackson.datatype.jsr310.ser.InstantSerializer;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 
 import java.time.Instant;
 import java.time.format.DateTimeFormatterBuilder;
 
+@ComponentScan("com.lastrix.scp.lib.rest")
 public class RestAutoConfiguration {
     //Jackson Data Binder
     @Bean
