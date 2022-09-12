@@ -23,6 +23,7 @@ import javax.sql.DataSource;
 import java.sql.SQLException;
 
 
+// originally from https://stackoverflow.com/a/72872126
 @Configuration
 @ConditionalOnClass({SpringLiquibase.class})
 @ConditionalOnProperty(prefix = "spring.liquibase", name = "enabled", matchIfMissing = true)
